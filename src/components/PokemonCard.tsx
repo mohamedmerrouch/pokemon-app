@@ -10,7 +10,7 @@ const PokemonCard: React.FC = () => {
       />
       <p>#006</p>
       <p>Charizard</p>
-      <TypeBadge />
+      <TypeBadge value="ground" />
     </div>
   );
 };

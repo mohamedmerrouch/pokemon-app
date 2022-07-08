@@ -24,10 +24,10 @@ const PokemonInfo = () => {
         <div className="column">
           <PokemonSpecs />
           <h3>Type</h3>
-          <TypeBadge />
+          <TypeBadge value="flying" />
           <h3>Weaknesses</h3>
-          <TypeBadge />
-          <TypeBadge />
+          <TypeBadge value="electric" />
+          <TypeBadge value="shadow" />
         </div>
       </div>
     </div>
