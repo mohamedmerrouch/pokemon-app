@@ -7,6 +7,7 @@ import {
   PolarRadiusAxis,
   ResponsiveContainer,
 } from "recharts";
+import { PokemonStatType } from "../models";
 
 const data = [
   {
@@ -47,17 +48,21 @@ const data = [
   },
 ];
 
-const PokemonStats = () => {
+interface Props {
+  stats: PokemonStatType[] | undefined;
+}
+
+const PokemonStats: React.FC<Props> = ({ stats }) => {
   return (
     <>
       <ResponsiveContainer width="100%" height="100%">
-        <RadarChart cx="50%" cy="50%" outerRadius="70%" data={data}>
+        <RadarChart cx="50%" cy="50%" outerRadius="70%" data={stats}>
           <PolarGrid />
-          <PolarAngleAxis fontSize="12px" dataKey="subject" />
+          <PolarAngleAxis fontSize="12px" dataKey="name" />
           <PolarRadiusAxis fontSize="12px" />
           <Radar
-            name="Mike"
-            dataKey="A"
+            name="PokemonStats"
+            dataKey="value"
             stroke="#8884d8"
             fill="#8884d8"
             fillOpacity={0.6}
