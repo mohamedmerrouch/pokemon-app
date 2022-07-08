@@ -12,6 +12,7 @@ const TypeBadge: React.FC<Props> = ({ value }) => {
     ["normal", ["bg-gray-100", "text-gray-800"]],
     ["fighting", ["bg-emerald-100", "text-emerald-800"]],
     ["flying", ["bg-teal-100", "text-teal-800"]],
+    ["poison", ["bg-purple-100", "text-purple-800"]],
     ["ground", ["bg-amber-100", "text-amber-800"]],
     ["rock", ["bg-amber-100", "text-amber-800"]],
     ["bug", ["bg-lime-100", "text-lime-800"]],
@@ -36,7 +37,7 @@ const TypeBadge: React.FC<Props> = ({ value }) => {
       color = ["bg-neutral-100", "text-neutral-800"];
     }
 
-    return `${color[0]} ${color[1]} text-xs font-semibold mr-2 px-2.5 py-0.5 rounded`;
+    return `${color[0]} ${color[1]} mb-2 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded`;
   };
 
   return <span className={classFromType(value)}>{capitalize(value)}</span>;
