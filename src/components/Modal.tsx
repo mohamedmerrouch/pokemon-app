@@ -1,15 +1,18 @@
 import React from "react";
+import { useAppDispatch } from "../store/hooks";
+import { closeModal } from "../store/pokemonsSlice";
 
 interface Props {
-  clickHandler: React.Dispatch<React.SetStateAction<boolean>>;
   children?: React.ReactNode;
 }
 
-const Modal: React.FC<Props> = ({ clickHandler, children }) => {
+const Modal: React.FC<Props> = ({ children }) => {
+  const dispatch = useAppDispatch();
+
   return (
     <div>
       <div
-        className="py-12 h-fit bg-gray-700/95 transition duration-150 ease-in-out z-10 absolute top-0 right-0 bottom-0 left-0"
+        className="fixed py-4 bg-gray-700/95 transition duration-150 ease-in-out z-10 top-0 right-0 bottom-0 left-0  h-full outline-none overflow-x-hidden overflow-y-auto"
         id="modal"
       >
         <div
@@ -24,7 +27,7 @@ const Modal: React.FC<Props> = ({ clickHandler, children }) => {
               <button
                 className="focus:outline-none ml-3 bg-gray-100 transition duration-150 text-gray-600 ease-in-out hover:border-gray-400 hover:bg-gray-300 border rounded px-8 py-2 text-sm"
                 onClick={() => {
-                  clickHandler(false);
+                  dispatch(closeModal());
                 }}
               >
                 Explore More Pokemons
@@ -33,7 +36,7 @@ const Modal: React.FC<Props> = ({ clickHandler, children }) => {
             <div
               className="cursor-pointer absolute top-0 right-0 mt-4 mr-5 text-gray-400 hover:text-gray-600 transition duration-150 ease-in-out"
               onClick={() => {
-                clickHandler(false);
+                dispatch(closeModal());
               }}
             >
               <svg
