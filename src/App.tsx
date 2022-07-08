@@ -1,38 +1,36 @@
-import React, { useState } from "react";
+import React from "react";
 import "./App.css";
 import PokemonLogo from "./pokemon-logo.png";
 
 import Modal from "./components/Modal";
 import PokemonGallery from "./components/PokemonGallery";
 import PokemonInfo from "./components/PokemonInfo";
+import { useAppSelector } from "./store/hooks";
 
 const App = () => {
-  const [modalOpen, setModalOpen] = useState(true);
-  
+  const modalOpened = useAppSelector((state) => state.pokemons.modalOpened);
+  const selectedPokemon = useAppSelector(
+    (state) => state.pokemons.selectedPokemon
+  );
+
   return (
     <>
       <header className="flex justify-center px-4 py-2">
         <img className="w-full sm:w-1/3" src={PokemonLogo} alt="Pokemon Logo" />
       </header>
       <section>
-        <div className="container mx-auto w-full flex justify-center py-12">
-          <p className="px-5">
+        <div className="container mx-auto w-full flex justify-center py-8">
+          <p className="px-5 text-xl">
             Discover more information about each Pokemon by clicking on it!
           </p>
-          <button
-            className="focus:outline-none mx-auto transition duration-150 ease-in-out hover:bg-indigo-600 bg-indigo-700 rounded text-white px-4 sm:px-8 py-2 text-xs sm:text-sm"
-            onClick={() => {
-              setModalOpen(true);
-            }}
-          >
-            Open Modal
-          </button>
         </div>
-        <PokemonGallery />
+        <div className={modalOpened ? "hidden" : ""}>
+          <PokemonGallery />
+        </div>
       </section>
-      {modalOpen && (
-        <Modal clickHandler={setModalOpen}>
-          <PokemonInfo />
+      {modalOpened && selectedPokemon > 0 && (
+        <Modal>
+          <PokemonInfo id={selectedPokemon} />
         </Modal>
       )}
     </>
