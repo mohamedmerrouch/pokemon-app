@@ -8,6 +8,7 @@ import PokemonInfo from "./components/PokemonInfo";
 
 const App = () => {
   const [modalOpen, setModalOpen] = useState(true);
+  
   return (
     <>
       <header className="flex justify-center px-4 py-2">
