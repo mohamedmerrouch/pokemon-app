@@ -3,7 +3,7 @@ import TypeBadge from "./TypeBadge";
 
 const PokemonCard: React.FC = () => {
   return (
-    <div className="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 m-2 transform transition duration-500 hover:scale-105">
+    <div className="w-fit bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 m-2 transform transition duration-500 hover:scale-105">
       <img
         className="rounded-t-lg w-full object-cover"
         src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/006.png"
