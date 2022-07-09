@@ -15,7 +15,7 @@ const PokemonInfo: React.FC<Props> = ({ id }) => {
   );
   return (
     <div className="mb-5">
-      <h5 className="text-center mb-4 text-3xl font-bold text-gray-900 dark:text-white">
+      <h5 className="text-center mb-4 text-3xl font-bold text-gray-900 dark:text-black">
         {capitalize(pokemon?.name)}
         <span className="text-gray-600"> #{pokemon?.id}</span>
       </h5>
@@ -33,7 +33,7 @@ const PokemonInfo: React.FC<Props> = ({ id }) => {
           </div>
         </div>
         <div className="max-w-xs">
-          <h6 className="text-left mb-2 text-xl text-gray-900 dark:text-white">
+          <h6 className="text-left mb-2 text-xl text-gray-900 dark:text-black">
             Description
           </h6>
           <p className="mb-3 text-left text-sm leading-relaxed">
@@ -49,7 +49,7 @@ const PokemonInfo: React.FC<Props> = ({ id }) => {
             versions={pokemon?.versions}
             ability={pokemon?.ability}
           />
-          <h6 className="text-left mb-2 text-xl text-gray-900 dark:text-white">
+          <h6 className="text-left mb-2 text-xl text-gray-900 dark:text-black">
             Type
           </h6>
           <div className="flex flex-wrap">
@@ -57,7 +57,7 @@ const PokemonInfo: React.FC<Props> = ({ id }) => {
               <TypeBadge key={type} value={type} />
             ))}
           </div>
-          <h6 className="text-left mt-3 mb-2 text-xl text-gray-900 dark:text-white">
+          <h6 className="text-left mt-3 mb-2 text-xl text-gray-900 dark:text-black">
             Weaknesses
           </h6>
           <div className="flex flex-wrap">

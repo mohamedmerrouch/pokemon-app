@@ -28,20 +28,18 @@ const PokemonGallery = () => {
           <Alert type="danger" message="Something went wrong!" />
         </div>
       )}
-      <div className="container px-3 py-2 mx-auto lg:pt-12 lg:px-16 flex flex-wrap justify-center">
-        <InfiniteScroll
-          className="container px-3 py-2 mx-auto lg:pt-12 lg:px-16 flex flex-wrap justify-center"
-          dataLength={pokemonsList.length}
-          next={fetchMore}
-          hasMore={true}
-          loader={""}
-          scrollThreshold="1px"
-        >
-          {pokemonsList.map((pokemon: Pokemon) => (
-            <PokemonCard key={pokemon.id} pokemon={pokemon} />
-          ))}
-        </InfiniteScroll>
-      </div>
+      <InfiniteScroll
+        className="container px-3 py-2 mx-auto lg:pt-2 lg:px-16 flex flex-wrap justify-center"
+        dataLength={pokemonsList.length}
+        next={fetchMore}
+        hasMore={true}
+        loader={""}
+        scrollThreshold="1px"
+      >
+        {pokemonsList.map((pokemon: Pokemon) => (
+          <PokemonCard key={pokemon.id} pokemon={pokemon} />
+        ))}
+      </InfiniteScroll>
       {fetchingState === "loading" && <Loader />}
     </>
   );

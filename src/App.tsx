@@ -20,7 +20,7 @@ const App = () => {
       </header>
       <section>
         <div className="container mx-auto w-full flex justify-center py-8">
-          <p className="px-5 text-xl">
+          <p className="px-5 text-xl text-center">
             Discover more information about each Pokemon by clicking on it!
           </p>
         </div>
