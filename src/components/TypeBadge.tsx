@@ -40,7 +40,11 @@ const TypeBadge: React.FC<Props> = ({ value }) => {
     return `${color[0]} ${color[1]} mb-2 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded`;
   };
 
-  return <span className={classFromType(value)}>{capitalize(value)}</span>;
+  return (
+    <span data-testid="type-badge" className={classFromType(value)}>
+      {capitalize(value)}
+    </span>
+  );
 };
 
 export default TypeBadge;
